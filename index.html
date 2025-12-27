@@ -4,94 +4,315 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adi2271 | Digital Systems Engineer</title>
-
     <link rel="stylesheet" href="css/style.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
-
 <body>
-
-<!-- ================= INTRO FLOW ================= -->
-
-<section class="intro welcome">
-    <h1 class="typing">Welcome</h1>
-</section>
-
-<section class="intro quote-section">
-    <blockquote>
-        “A person is defined not by what they know, but by what they create with it.”
-    </blockquote>
-    <span>— Adi2271</span>
-</section>
-
-<section class="intro hero-image">
-    <div class="overlay"></div>
-    <h1>Digital Systems Engineer</h1>
-</section>
-
-<!-- ================= NAVBAR ================= -->
-
-<header class="navbar">
-    <div class="navbar-container">
-        <h1 class="logo">Adi2271</h1>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#achievements">Achievements</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
-        </nav>
+    <!-- CS101: EPIC DISAPPEARING QUOTE (div + class) -->
+    <div class="quote-overlay">
+        <div class="quote-container">
+            <blockquote class="quote">
+                "A person is defined not by what they know, but by what they create with it."
+            </blockquote>
+            <span class="quote-author">– Adi2271</span>
+        </div>
     </div>
-</header>
 
-<!-- ================= ABOUT ================= -->
+    <!-- NAVBAR (Sticky) -->
+    <header class="navbar">
+        <div class="navbar-container">
+            <h1 class="logo">Adi2271</h1>
+            <nav class="nav-links">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#achievements" class="nav-link">Achievements</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
 
-<section id="about" class="section particles">
-    <div class="container">
-        <h2>About Me</h2>
-        <p>
-            B.Tech CSE student at <strong>IIIT Haryana</strong>, focused on digital systems,
-            signal processing, and mathematical foundations of computing.
-        </p>
-    </div>
-</section>
+    <!-- ABOUT / BIO SECTION (Anime background fades on scroll) -->
+    <section id="about" class="hero">
+        <div class="hero-bg"></div>
+        <div class="container hero-content">
+            <h1 class="hero-title">Digital Systems Engineer</h1>
+            <p class="hero-subtitle">
+                IIIT Student | Signal Processing Enthusiast | C Programmer | Verilog Designer
+            </p>
+            
+            <!-- CS101: Profile Image + Box Shadow glow -->
+            <div class="hero-image">
+                <img src="images/profile.jpg" alt="Adi2271 - Digital Systems Engineer">
+            </div>
 
-<!-- ================= ACHIEVEMENTS ================= -->
+            <!-- CS101: Introduction text + hyperlinks -->
+            <div class="bio-content">
+                <h2>Welcome to My Digital Space</h2>
+                <p>
+                    I'm a passionate engineering student at <strong>IIIT, Haryana</strong>, diving deep into 
+                    digital systems, signal processing, and the mathematics that powers modern computing. 
+                    This portfolio showcases my journey through coursework, projects, and self-directed learning.
+                </p>
+                <p>
+                    Explore my <a href="https://github.com/Adi2271" target="_blank">GitHub</a> | 
+                    Connect on <a href="https://linkedin.com/in/your-profile" target="_blank">LinkedIn</a>
+                </p>
+            </div>
 
-<section id="achievements" class="section particles">
-    <div class="container">
-        <h2>Achievements</h2>
-        <ul>
-            <li>Real Analysis & Fourier Series</li>
-            <li>Digital Logic & Verilog Design</li>
-            <li>Strong C Programming Foundation</li>
-        </ul>
-    </div>
-</section>
+            <!-- CS101: Education Table (Required) -->
+            <div class="table-wrapper">
+                <h2>Academic Background</h2>
+                <table class="education-table">
+                    <thead>
+                        <tr>
+                            <th>Degree</th>
+                            <th>Institution</th>
+                            <th>Focus Area</th>
+                            <th>Duration</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>B.Tech CSE</td>
+                            <td>IIIT Haryana</td>
+                            <td>Digital Systems Design</td>
+                            <td>2023 - 2027</td>
+                        </tr>
+                        <tr>
+                            <td>Coursework</td>
+                            <td>IIIT Haryana</td>
+                            <td>Fourier Analysis, Real Analysis</td>
+                            <td>Ongoing</td>
+                        </tr>       
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
 
-<!-- ================= SKILLS ================= -->
+    <!-- ACHIEVEMENTS SECTION (CS101: Lists + div/class/id) -->
+    <section id="achievements" class="achievements">
+        <div class="container">
+            <h2>Achievements & Milestones</h2>
+            <div class="achievements-grid">
+                
+                <!-- Achievement Card 1 -->
+                <div class="achievement-card" id="coursework">
+                    <div class="achievement-icon">📚</div>
+                    <h3>Coursework Excellence</h3>
+                    <ul>
+                        <li>Real Analysis - Mastered convergence & continuity theorems</li>
+                        <li>Signal Processing - Deep dive into Continuous-Time Fourier Series</li>
+                        <li>Digital Systems - Logic design & circuit optimization</li>
+                        <li>Data Structures - Algorithmic problem-solving in C</li>
+                    </ul>
+                </div>
 
-<section id="skills" class="section particles">
-    <div class="container">
-        <h2>Skills</h2>
-        <p>C • Verilog • HTML/CSS • Git • Signal Processing</p>
-    </div>
-</section>
+                <!-- Achievement Card 2 -->
+                <div class="achievement-card" id="programming">
+                    <div class="achievement-icon">💻</div>
+                    <h3>Programming Skills</h3>
+                    <ol>
+                        <li>C Programming - GCC compilation, VS Code mastery</li>
+                        <li>Verilog - Digital circuit design & simulation</li>
+                        <li>HTML/CSS - Web design & GitHub Pages deployment</li>
+                        <li>Git/GitHub - Version control workflow expertise</li>
+                    </ol>
+                </div>
 
-<!-- ================= CONTACT ================= -->
+                <!-- Achievement Card 3 -->
+                <div class="achievement-card" id="projects">
+                    <div class="achievement-icon">⚙️</div>
+                    <h3>Key Projects</h3>
+                    <ul>
+                        <li>Digital Circuit Optimization - Multiplexers & Adders</li>
+                        <li>Signal Processing Lab - Fourier coefficient calculations</li>
+                        <li>CS101 Portfolio Site - This fully responsive design</li>
+                        <li>Real Analysis Problem Sets - Theorem applications & proofs</li>
+                    </ul>
+                </div>
 
-<section id="contact" class="section particles">
-    <div class="container">
-        <h2>Contact</h2>
+                <!-- Achievement Card 4 -->
+                <div class="achievement-card" id="learning">
+                    <div class="achievement-icon">🧠</div>
+                    <h3>Active Learning</h3>
+                    <ul>
+                        <li>Machine Learning Fundamentals - Started exploring AI concepts</li>
+                        <li>Advanced Number Systems - Binary, Gray code, BCD conversions</li>
+                        <li>Mathematical Proofs - Lipschitz continuity & squeeze theorem</li>
+                        <li>Self-Directed Study - Consistent daily learning routine</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <a class="btn primary" href="https://github.com/Adi2271" target="_blank">GitHub</a>
-        <a class="btn secondary" href="https://www.w3schools.com" target="_blank">Web Resources</a>
-    </div>
-</section>
+    <!-- SKILLS SECTION (Technical Arsenal) -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2>Technical Arsenal</h2>
+            <div class="skills-grid">
+                
+                <!-- Skill 1 -->
+                <div class="skill-card" id="skill-languages">
+                    <h3>🔧 Languages & Frameworks</h3>
+                    <ul>
+                        <li>C (Pointers, Data Structures, Algorithms)</li>
+                        <li>Verilog (HDL, Circuit Design)</li>
+                        <li>HTML5 & CSS3 (Responsive Design)</li>
+                        <li>Bash/PowerShell (Terminal Proficiency)</li>
+                    </ul>
+                </div>
 
-<footer class="footer">
-    <p>© 2025 Adi2271 • Built with HTML & CSS</p>
-</footer>
+                <!-- Skill 2 -->
+                <div class="skill-card" id="skill-theory">
+                    <h3>📐 Mathematical Theory</h3>
+                    <ul>
+                        <li>Real Analysis (Convergence, Continuity Theorems)</li>
+                        <li>Fourier Analysis (CTFS, Coefficients)</li>
+                        <li>Digital Logic (Boolean Algebra, Minimization)</li>
+                        <li>Number Theory & Code Conversions</li>
+                    </ul>
+                </div>
+
+                <!-- Skill 3 -->
+                <div class="skill-card" id="skill-tools">
+                    <h3>⚡ Tools & Platforms</h3>
+                    <ul>
+                        <li>VS Code (Primary IDE & Editor)</li>
+                        <li>Git & GitHub (Version Control, CI/CD)</li>
+                        <li>GCC Compiler (C Compilation & Debugging)</li>
+                        <li>GitHub Pages (Static Site Hosting)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CS101: IFRAME SECTION (Required) -->
+    <section class="iframe-section">
+        <div class="container">
+            <h2>Learning Resources</h2>
+            <p>Continuous learning through trusted resources:</p>
+            <div class="iframe-wrapper">
+                <iframe 
+                    src="https://www.w3schools.com/html/"
+                    title="W3Schools HTML Tutorial"
+                    loading="lazy"
+                    referrerpolicy="no-referrer"
+                ></iframe>
+            </div>
+            
+            <!-- CS101: Button group with class/id -->
+            <div class="button-group">
+                <a href="https://github.com/Adi2271" class="btn btn-primary" id="github-btn" target="_blank">
+                    🔗 GitHub Profile
+                </a>
+                <a href="https://www.w3schools.com" class="btn btn-secondary" id="resources-btn" target="_blank">
+                    📚 Web Resources
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION (Enhanced) -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Let's Connect & Collaborate</h2>
+            
+            <div class="contact-grid">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    
+                    <div class="contact-method">
+                        <strong>📧 Email</strong>
+                        <p><a href="mailto:adi2271@gmail.com">adi2271@gmail.com</a></p>
+                    </div>
+
+                    <div class="contact-method">
+                        <strong>📍 Location</strong>
+                        <p>Närnaund, Haryana, India</p>
+                    </div>
+
+                    <div class="contact-method">
+                        <strong>🎓 Education</strong>
+                        <p>IIIT Haryana | Digital Systems Engineering</p>
+                    </div>
+
+                    <div class="contact-method">
+                        <strong>🔗 Socials</strong>
+                        <p>
+                            <a href="https://github.com/Adi2271" target="_blank">GitHub</a> | 
+                            <a href="https://linkedin.com/in/your-profile" target="_blank">LinkedIn</a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h3>Send me a Message</h3>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input 
+                                type="text" 
+                                id="name" 
+                                name="name"
+                                placeholder="Your Name" 
+                                required
+                                aria-label="Your Name"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email"
+                                placeholder="your@email.com" 
+                                required
+                                aria-label="Your Email"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <input 
+                                type="text" 
+                                id="subject" 
+                                name="subject"
+                                placeholder="Subject" 
+                                required
+                                aria-label="Message Subject"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <textarea 
+                                id="message" 
+                                name="message"
+                                placeholder="Your message..." 
+                                rows="6" 
+                                required
+                                aria-label="Your Message"
+                            ></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
+                            ✉️ Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Adi2271 | Digital Systems Engineer | Made with HTML/CSS for CS101 Assignment</p>
+            <p>GitHub Pages • Always Learning • Always Building</p>
+        </div>
+    </footer>
 
 </body>
 </html>
