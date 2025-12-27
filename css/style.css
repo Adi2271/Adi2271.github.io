@@ -1,5 +1,5 @@
 /* =====================================================
-   PITCH BLACK & WHITE THEME - Pure CSS
+   PITCH BLACK & WHITE THEME - Pure CSS Enhanced
    ===================================================== */
 :root {
     --color-bg: #000000;
@@ -35,7 +35,7 @@ body {
 }
 
 /* =====================================================
-   QUOTE OVERLAY - Particle Disintegration (Pure CSS)
+   QUOTE OVERLAY - Enhanced Particle Disintegration
    ===================================================== */
 
 .quote-overlay {
@@ -63,24 +63,29 @@ body {
     padding: 2rem;
     position: relative;
     z-index: 1001;
-    animation: textDissolve 4s ease-out forwards;
+    animation: textShatter 4s ease-out forwards;
 }
 
-@keyframes textDissolve {
-    0%, 65% { 
+@keyframes textShatter {
+    0%, 60% { 
         opacity: 1;
-        filter: blur(0px);
+        filter: blur(0px) brightness(1);
         transform: scale(1);
     }
+    75% {
+        opacity: 0.8;
+        filter: blur(1px) brightness(1.2);
+        transform: scale(1.02);
+    }
     85% {
-        opacity: 0.5;
-        filter: blur(3px);
-        transform: scale(1.08);
+        opacity: 0.4;
+        filter: blur(4px) brightness(1.5);
+        transform: scale(1.06);
     }
     100% { 
         opacity: 0;
-        filter: blur(10px);
-        transform: scale(1.2);
+        filter: blur(12px) brightness(2);
+        transform: scale(1.15);
     }
 }
 
@@ -89,20 +94,11 @@ body {
     font-family: var(--font-title);
     font-weight: 600;
     color: var(--color-primary);
-    margin-bottom: 1.5rem;
     letter-spacing: 1px;
     line-height: 1.5;
 }
 
-.quote-author {
-    font-size: 1.2rem;
-    color: var(--color-text-dim);
-    font-style: italic;
-    font-family: var(--font-main);
-    font-weight: 400;
-}
-
-/* Particle System */
+/* Enhanced Particle System - 60 particles */
 .particles {
     position: absolute;
     top: 0;
@@ -115,57 +111,140 @@ body {
 
 .particle {
     position: absolute;
-    width: 3px;
-    height: 3px;
-    background: rgba(255, 255, 255, 0.7);
+    width: 4px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.8);
     border-radius: 50%;
     opacity: 0;
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
 }
 
-.particle:nth-child(1) { left: 45%; top: 40%; animation: particleFloat1 3.5s ease-out 2.7s forwards; }
-.particle:nth-child(2) { left: 55%; top: 42%; animation: particleFloat2 3.5s ease-out 2.75s forwards; }
-.particle:nth-child(3) { left: 48%; top: 45%; animation: particleFloat3 3.5s ease-out 2.8s forwards; }
-.particle:nth-child(4) { left: 52%; top: 47%; animation: particleFloat4 3.5s ease-out 2.85s forwards; }
-.particle:nth-child(5) { left: 50%; top: 50%; animation: particleFloat5 3.5s ease-out 2.9s forwards; }
-.particle:nth-child(6) { left: 46%; top: 52%; animation: particleFloat6 3.5s ease-out 2.95s forwards; }
-.particle:nth-child(7) { left: 54%; top: 54%; animation: particleFloat7 3.5s ease-out 3s forwards; }
-.particle:nth-child(8) { left: 49%; top: 56%; animation: particleFloat8 3.5s ease-out 3.05s forwards; }
-.particle:nth-child(9) { left: 51%; top: 38%; animation: particleFloat9 3.5s ease-out 3.1s forwards; }
-.particle:nth-child(10) { left: 47%; top: 58%; animation: particleFloat10 3.5s ease-out 3.15s forwards; }
-.particle:nth-child(11) { left: 53%; top: 36%; animation: particleFloat11 3.5s ease-out 3.2s forwards; }
-.particle:nth-child(12) { left: 44%; top: 48%; animation: particleFloat12 3.5s ease-out 3.25s forwards; }
-.particle:nth-child(13) { left: 56%; top: 49%; animation: particleFloat13 3.5s ease-out 3.3s forwards; }
-.particle:nth-child(14) { left: 43%; top: 44%; animation: particleFloat14 3.5s ease-out 3.35s forwards; }
-.particle:nth-child(15) { left: 57%; top: 53%; animation: particleFloat15 3.5s ease-out 3.4s forwards; }
-.particle:nth-child(16) { left: 42%; top: 51%; animation: particleFloat16 3.5s ease-out 3.45s forwards; }
-.particle:nth-child(17) { left: 58%; top: 46%; animation: particleFloat17 3.5s ease-out 3.5s forwards; }
-.particle:nth-child(18) { left: 41%; top: 55%; animation: particleFloat18 3.5s ease-out 3.55s forwards; }
-.particle:nth-child(19) { left: 59%; top: 41%; animation: particleFloat19 3.5s ease-out 3.6s forwards; }
-.particle:nth-child(20) { left: 40%; top: 57%; animation: particleFloat20 3.5s ease-out 3.65s forwards; }
+/* Particle animations - spreading in all directions */
+.particle:nth-child(1) { left: 48%; top: 45%; animation: particle1 3s ease-out 2.5s forwards; }
+.particle:nth-child(2) { left: 52%; top: 46%; animation: particle2 3s ease-out 2.52s forwards; }
+.particle:nth-child(3) { left: 50%; top: 48%; animation: particle3 3s ease-out 2.54s forwards; }
+.particle:nth-child(4) { left: 49%; top: 50%; animation: particle4 3s ease-out 2.56s forwards; }
+.particle:nth-child(5) { left: 51%; top: 49%; animation: particle5 3s ease-out 2.58s forwards; }
+.particle:nth-child(6) { left: 47%; top: 47%; animation: particle6 3s ease-out 2.6s forwards; }
+.particle:nth-child(7) { left: 53%; top: 51%; animation: particle7 3s ease-out 2.62s forwards; }
+.particle:nth-child(8) { left: 50%; top: 52%; animation: particle8 3s ease-out 2.64s forwards; }
+.particle:nth-child(9) { left: 48%; top: 44%; animation: particle9 3s ease-out 2.66s forwards; }
+.particle:nth-child(10) { left: 52%; top: 53%; animation: particle10 3s ease-out 2.68s forwards; }
+.particle:nth-child(11) { left: 46%; top: 46%; animation: particle11 3s ease-out 2.7s forwards; }
+.particle:nth-child(12) { left: 54%; top: 47%; animation: particle12 3s ease-out 2.72s forwards; }
+.particle:nth-child(13) { left: 49%; top: 43%; animation: particle13 3s ease-out 2.74s forwards; }
+.particle:nth-child(14) { left: 51%; top: 54%; animation: particle14 3s ease-out 2.76s forwards; }
+.particle:nth-child(15) { left: 45%; top: 48%; animation: particle15 3s ease-out 2.78s forwards; }
+.particle:nth-child(16) { left: 55%; top: 49%; animation: particle16 3s ease-out 2.8s forwards; }
+.particle:nth-child(17) { left: 50%; top: 42%; animation: particle17 3s ease-out 2.82s forwards; }
+.particle:nth-child(18) { left: 48%; top: 55%; animation: particle18 3s ease-out 2.84s forwards; }
+.particle:nth-child(19) { left: 52%; top: 44%; animation: particle19 3s ease-out 2.86s forwards; }
+.particle:nth-child(20) { left: 47%; top: 53%; animation: particle20 3s ease-out 2.88s forwards; }
+.particle:nth-child(21) { left: 53%; top: 45%; animation: particle21 3s ease-out 2.9s forwards; }
+.particle:nth-child(22) { left: 44%; top: 49%; animation: particle22 3s ease-out 2.92s forwards; }
+.particle:nth-child(23) { left: 56%; top: 50%; animation: particle23 3s ease-out 2.94s forwards; }
+.particle:nth-child(24) { left: 49%; top: 41%; animation: particle24 3s ease-out 2.96s forwards; }
+.particle:nth-child(25) { left: 51%; top: 56%; animation: particle25 3s ease-out 2.98s forwards; }
+.particle:nth-child(26) { left: 46%; top: 44%; animation: particle26 3s ease-out 3s forwards; }
+.particle:nth-child(27) { left: 54%; top: 52%; animation: particle27 3s ease-out 3.02s forwards; }
+.particle:nth-child(28) { left: 48%; top: 40%; animation: particle28 3s ease-out 3.04s forwards; }
+.particle:nth-child(29) { left: 52%; top: 57%; animation: particle29 3s ease-out 3.06s forwards; }
+.particle:nth-child(30) { left: 43%; top: 47%; animation: particle30 3s ease-out 3.08s forwards; }
+.particle:nth-child(31) { left: 57%; top: 51%; animation: particle31 3s ease-out 3.1s forwards; }
+.particle:nth-child(32) { left: 50%; top: 39%; animation: particle32 3s ease-out 3.12s forwards; }
+.particle:nth-child(33) { left: 49%; top: 58%; animation: particle33 3s ease-out 3.14s forwards; }
+.particle:nth-child(34) { left: 51%; top: 43%; animation: particle34 3s ease-out 3.16s forwards; }
+.particle:nth-child(35) { left: 45%; top: 54%; animation: particle35 3s ease-out 3.18s forwards; }
+.particle:nth-child(36) { left: 55%; top: 46%; animation: particle36 3s ease-out 3.2s forwards; }
+.particle:nth-child(37) { left: 42%; top: 50%; animation: particle37 3s ease-out 3.22s forwards; }
+.particle:nth-child(38) { left: 58%; top: 48%; animation: particle38 3s ease-out 3.24s forwards; }
+.particle:nth-child(39) { left: 47%; top: 38%; animation: particle39 3s ease-out 3.26s forwards; }
+.particle:nth-child(40) { left: 53%; top: 59%; animation: particle40 3s ease-out 3.28s forwards; }
+.particle:nth-child(41) { left: 44%; top: 42%; animation: particle41 3s ease-out 3.3s forwards; }
+.particle:nth-child(42) { left: 56%; top: 55%; animation: particle42 3s ease-out 3.32s forwards; }
+.particle:nth-child(43) { left: 48%; top: 37%; animation: particle43 3s ease-out 3.34s forwards; }
+.particle:nth-child(44) { left: 52%; top: 60%; animation: particle44 3s ease-out 3.36s forwards; }
+.particle:nth-child(45) { left: 41%; top: 48%; animation: particle45 3s ease-out 3.38s forwards; }
+.particle:nth-child(46) { left: 59%; top: 49%; animation: particle46 3s ease-out 3.4s forwards; }
+.particle:nth-child(47) { left: 49%; top: 36%; animation: particle47 3s ease-out 3.42s forwards; }
+.particle:nth-child(48) { left: 51%; top: 61%; animation: particle48 3s ease-out 3.44s forwards; }
+.particle:nth-child(49) { left: 46%; top: 41%; animation: particle49 3s ease-out 3.46s forwards; }
+.particle:nth-child(50) { left: 54%; top: 56%; animation: particle50 3s ease-out 3.48s forwards; }
+.particle:nth-child(51) { left: 40%; top: 46%; animation: particle51 3s ease-out 3.5s forwards; }
+.particle:nth-child(52) { left: 60%; top: 51%; animation: particle52 3s ease-out 3.52s forwards; }
+.particle:nth-child(53) { left: 50%; top: 35%; animation: particle53 3s ease-out 3.54s forwards; }
+.particle:nth-child(54) { left: 48%; top: 62%; animation: particle54 3s ease-out 3.56s forwards; }
+.particle:nth-child(55) { left: 52%; top: 40%; animation: particle55 3s ease-out 3.58s forwards; }
+.particle:nth-child(56) { left: 45%; top: 57%; animation: particle56 3s ease-out 3.6s forwards; }
+.particle:nth-child(57) { left: 55%; top: 44%; animation: particle57 3s ease-out 3.62s forwards; }
+.particle:nth-child(58) { left: 43%; top: 52%; animation: particle58 3s ease-out 3.64s forwards; }
+.particle:nth-child(59) { left: 57%; top: 47%; animation: particle59 3s ease-out 3.66s forwards; }
+.particle:nth-child(60) { left: 50%; top: 50%; animation: particle60 3s ease-out 3.68s forwards; }
 
-@keyframes particleFloat1 { 0% { opacity: 0; transform: translate(0, 0); } 30% { opacity: 1; } 100% { opacity: 0; transform: translate(-120px, -150px); } }
-@keyframes particleFloat2 { 0% { opacity: 0; transform: translate(0, 0); } 30% { opacity: 1; } 100% { opacity: 0; transform: translate(140px, -170px); } }
-@keyframes particleFloat3 { 0% { opacity: 0; transform: translate(0, 0); } 30% { opacity: 1; } 100% { opacity: 0; transform: translate(-100px, 130px); } }
-@keyframes particleFloat4 { 0% { opacity: 0; transform: translate(0, 0); } 30% { opacity: 1; } 100% { opacity: 0; transform: translate(160px, 120px); } }
-@keyframes particleFloat5 { 0% { opacity: 0; transform: translate(0, 0); } 30% { opacity: 1; } 100% { opacity: 0; transform: translate(-130px, -90px); } }
-@keyframes particleFloat6 { 0% { opacity: 0; transform: translate(0, 0); } 30% { opacity: 1; } 100% { opacity: 0; transform: translate(110px, -180px); } }
-@keyframes particleFloat7 { 0% { opacity: 0; transform: translate(0, 0); } 30% { opacity: 1; } 100% { opacity: 0; transform: translate(-140px, 140px); } }
-@keyframes particleFloat8 { 0% { opacity: 0; transform: translate(0, 0); } 30% { opacity: 1; } 100% { opacity: 0; transform: translate(150px, 160px); } }
-@keyframes particleFloat9 { 0% { opacity: 0; transform: translate(0, 0); } 30% { opacity: 1; } 100% { opacity: 0; transform: translate(-110px, -130px); } }
-@keyframes particleFloat10 { 0% { opacity: 0; transform: translate(0, 0); } 30% { opacity: 1; } 100% { opacity: 0; transform: translate(170px, -110px); } }
-@keyframes particleFloat11 { 0% { opacity: 0; transform: translate(0, 0); } 30% { opacity: 1; } 100% { opacity: 0; transform: translate(-90px, 150px); } }
-@keyframes particleFloat12 { 0% { opacity: 0; transform: translate(0, 0); } 30% { opacity: 1; } 100% { opacity: 0; transform: translate(130px, 140px); } }
-@keyframes particleFloat13 { 0% { opacity: 0; transform: translate(0, 0); } 30% { opacity: 1; } 100% { opacity: 0; transform: translate(-150px, -120px); } }
-@keyframes particleFloat14 { 0% { opacity: 0; transform: translate(0, 0); } 30% { opacity: 1; } 100% { opacity: 0; transform: translate(120px, -160px); } }
-@keyframes particleFloat15 { 0% { opacity: 0; transform: translate(0, 0); } 30% { opacity: 1; } 100% { opacity: 0; transform: translate(-105px, 170px); } }
-@keyframes particleFloat16 { 0% { opacity: 0; transform: translate(0, 0); } 30% { opacity: 1; } 100% { opacity: 0; transform: translate(180px, 110px); } }
-@keyframes particleFloat17 { 0% { opacity: 0; transform: translate(0, 0); } 30% { opacity: 1; } 100% { opacity: 0; transform: translate(-160px, -140px); } }
-@keyframes particleFloat18 { 0% { opacity: 0; transform: translate(0, 0); } 30% { opacity: 1; } 100% { opacity: 0; transform: translate(125px, -145px); } }
-@keyframes particleFloat19 { 0% { opacity: 0; transform: translate(0, 0); } 30% { opacity: 1; } 100% { opacity: 0; transform: translate(-135px, 165px); } }
-@keyframes particleFloat20 { 0% { opacity: 0; transform: translate(0, 0); } 30% { opacity: 1; } 100% { opacity: 0; transform: translate(190px, 135px); } }
+/* Keyframes for each particle direction */
+@keyframes particle1 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(-180px, -220px); } }
+@keyframes particle2 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(190px, -210px); } }
+@keyframes particle3 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(-150px, 200px); } }
+@keyframes particle4 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(170px, 190px); } }
+@keyframes particle5 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(-200px, -150px); } }
+@keyframes particle6 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(180px, -180px); } }
+@keyframes particle7 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(-160px, 210px); } }
+@keyframes particle8 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(200px, 170px); } }
+@keyframes particle9 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(-170px, -190px); } }
+@keyframes particle10 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(210px, -160px); } }
+@keyframes particle11 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(-220px, 180px); } }
+@keyframes particle12 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(160px, 220px); } }
+@keyframes particle13 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(-190px, -200px); } }
+@keyframes particle14 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(220px, -170px); } }
+@keyframes particle15 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(-210px, 160px); } }
+@keyframes particle16 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(150px, 200px); } }
+@keyframes particle17 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(-140px, -230px); } }
+@keyframes particle18 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(230px, -140px); } }
+@keyframes particle19 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(-230px, 150px); } }
+@keyframes particle20 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(140px, 230px); } }
+@keyframes particle21 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(-125px, -195px); } }
+@keyframes particle22 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(195px, -125px); } }
+@keyframes particle23 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(-195px, 125px); } }
+@keyframes particle24 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(125px, 195px); } }
+@keyframes particle25 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(-165px, -215px); } }
+@keyframes particle26 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(215px, -165px); } }
+@keyframes particle27 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(-215px, 165px); } }
+@keyframes particle28 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(165px, 215px); } }
+@keyframes particle29 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(-135px, -225px); } }
+@keyframes particle30 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(225px, -135px); } }
+@keyframes particle31 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(-225px, 135px); } }
+@keyframes particle32 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(135px, 225px); } }
+@keyframes particle33 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(-175px, -175px); } }
+@keyframes particle34 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(175px, -175px); } }
+@keyframes particle35 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(-175px, 175px); } }
+@keyframes particle36 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(175px, 175px); } }
+@keyframes particle37 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(-240px, -120px); } }
+@keyframes particle38 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(240px, -120px); } }
+@keyframes particle39 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(-240px, 120px); } }
+@keyframes particle40 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(240px, 120px); } }
+@keyframes particle41 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(-120px, -240px); } }
+@keyframes particle42 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(120px, -240px); } }
+@keyframes particle43 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(-120px, 240px); } }
+@keyframes particle44 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(120px, 240px); } }
+@keyframes particle45 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(-250px, -100px); } }
+@keyframes particle46 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(250px, -100px); } }
+@keyframes particle47 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(-250px, 100px); } }
+@keyframes particle48 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(250px, 100px); } }
+@keyframes particle49 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(-100px, -250px); } }
+@keyframes particle50 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(100px, -250px); } }
+@keyframes particle51 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(-100px, 250px); } }
+@keyframes particle52 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(100px, 250px); } }
+@keyframes particle53 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(-205px, -185px); } }
+@keyframes particle54 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(205px, -185px); } }
+@keyframes particle55 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(-205px, 185px); } }
+@keyframes particle56 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(205px, 185px); } }
+@keyframes particle57 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(-185px, -205px); } }
+@keyframes particle58 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(185px, -205px); } }
+@keyframes particle59 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(-185px, 205px); } }
+@keyframes particle60 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(185px, 205px); } }
 
 /* =====================================================
-   NAVBAR - No Underlines
+   NAVBAR
    ===================================================== */
 
 .navbar {
@@ -218,7 +297,7 @@ body {
 }
 
 /* =====================================================
-   WELCOME SECTION - Full Screen Only
+   WELCOME SECTION - Pure CSS Typing Animation
    ===================================================== */
 
 .container {
@@ -265,18 +344,8 @@ section {
     font-size: clamp(3rem, 8vw, 5.5rem);
     font-weight: 700;
     color: var(--color-primary);
-    margin-bottom: 1.5rem;
     letter-spacing: 4px;
     animation: fadeInUp 1.5s ease-out 4.5s backwards;
-}
-
-.welcome-subtitle {
-    font-family: var(--font-mono);
-    font-size: clamp(1rem, 2.5vw, 1.4rem);
-    color: var(--color-text-dim);
-    font-weight: 400;
-    letter-spacing: 1px;
-    animation: fadeInUp 1.5s ease-out 4.8s backwards;
 }
 
 @keyframes fadeInUp {
@@ -288,6 +357,55 @@ section {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* CSS Typing Animation */
+.typing-text {
+    display: inline-block;
+    font-family: var(--font-title);
+}
+
+.typing-text::before {
+    content: 'Welcome';
+    animation: typeText 12s steps(14) infinite, changeText 12s step-end infinite;
+}
+
+@keyframes typeText {
+    0%, 8.33% { content: ''; }
+    8.33%, 16.66% { content: 'W'; }
+    16.66%, 25% { content: 'We'; }
+    25%, 33.33% { content: 'Wel'; }
+    33.33%, 41.66% { content: 'Welc'; }
+    41.66%, 50% { content: 'Welco'; }
+    50%, 58.33% { content: 'Welcom'; }
+    58.33%, 66.66% { content: 'Welcome'; }
+    66.66%, 75% { content: 'Welcome'; }
+    75%, 83.33% { content: 'Welcome'; }
+    83.33%, 100% { content: ''; }
+}
+
+@keyframes changeText {
+    0%, 25% { content: 'Welcome'; }
+    25%, 50% { content: 'Aditya Patil'; }
+    50%, 75% { content: 'BTech Student'; }
+    75%, 100% { content: 'Welcome'; }
+}
+
+.typing-text::after {
+    content: '';
+    display: inline-block;
+}
+
+.cursor-blink {
+    display: inline-block;
+    margin-left: 8px;
+    animation: blink 1s infinite;
+    font-weight: 300;
+}
+
+@keyframes blink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
 }
 
 /* =====================================================
@@ -304,6 +422,17 @@ section {
 }
 
 .hero-subtitle {
+    font-size: 1.4rem;
+    color: var(--color-primary);
+    max-width: 700px;
+    margin: 0 auto 1rem;
+    line-height: 1.8;
+    font-weight: 500;
+    font-family: var(--font-mono);
+    letter-spacing: 0.5px;
+}
+
+.hero-subtitle-secondary {
     font-size: 1.2rem;
     color: var(--color-text-dim);
     max-width: 700px;
@@ -312,7 +441,7 @@ section {
     font-weight: 400;
 }
 
-/* Profile Image - Softer Gray Glow */
+/* Profile Image */
 .hero-image img {
     width: 200px;
     height: 200px;
@@ -428,7 +557,7 @@ section {
 }
 
 /* =====================================================
-   ACHIEVEMENTS SECTION
+   ACHIEVEMENTS SECTION - With Click Glow Effect
    ===================================================== */
 
 .achievements {
@@ -451,12 +580,64 @@ section {
     gap: 2rem;
 }
 
+/* Hide radio inputs */
+.achievement-input {
+    display: none;
+}
+
 .achievement-card {
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 12px;
     padding: 2.5rem 2rem;
     transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Gradient sweep effect on click */
+.achievement-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.15), 
+        rgba(255, 255, 255, 0.25),
+        rgba(255, 255, 255, 0.15),
+        transparent
+    );
+    transition: left 0.8s ease;
+    pointer-events: none;
+}
+
+/* Active state when clicked */
+.achievement-input:checked + .achievement-card {
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        0 0 25px rgba(255, 255, 255, 0.15),
+        inset 0 0 30px rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Trigger gradient sweep from left on click */
+.achievement-input:checked + .achievement-card::before {
+    left: 100%;
+}
+
+/* Reverse direction for alternating cards */
+.achievement-input:nth-of-type(2):checked + .achievement-card::before,
+.achievement-input:nth-of-type(4):checked + .achievement-card::before {
+    animation: sweepRight 0.8s ease forwards;
+}
+
+@keyframes sweepRight {
+    from { left: 100%; }
+    to { left: -100%; }
 }
 
 .achievement-card:hover {
@@ -586,103 +767,6 @@ section {
 }
 
 /* =====================================================
-   IFRAME SECTION
-   ===================================================== */
-
-.iframe-section {
-    background: #000000;
-}
-
-.iframe-section h2 {
-    font-family: var(--font-title);
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 1.5rem;
-    color: var(--color-primary);
-    font-weight: 600;
-}
-
-.iframe-section p {
-    text-align: center;
-    color: var(--color-text-dim);
-    margin-bottom: 2rem;
-    font-size: 1.1rem;
-}
-
-.iframe-wrapper {
-    width: 100%;
-    max-width: 1000px;
-    margin: 2rem auto;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.iframe-section iframe {
-    width: 100%;
-    height: 500px;
-    border: none;
-}
-
-.button-group {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    margin-top: 3rem;
-    flex-wrap: wrap;
-}
-
-/* =====================================================
-   BUTTONS - Black & White Theme
-   ===================================================== */
-
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem 2.5rem;
-    border-radius: 6px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    font-size: 0.95rem;
-    font-family: var(--font-mono);
-    border: none;
-    cursor: pointer;
-    letter-spacing: 0.5px;
-}
-
-.btn-primary {
-    background: var(--color-primary);
-    color: #000000;
-    border: 2px solid var(--color-primary);
-}
-
-.btn-primary:hover {
-    background: transparent;
-    color: var(--color-primary);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15);
-}
-
-.btn-secondary {
-    background: transparent;
-    color: var(--color-primary);
-    border: 2px solid rgba(255, 255, 255, 0.4);
-}
-
-.btn-secondary:hover {
-    background: var(--color-primary);
-    color: #000000;
-    border-color: var(--color-primary);
-    transform: translateY(-3px);
-}
-
-.btn-full {
-    width: 100%;
-}
-
-/* =====================================================
    CONTACT SECTION
    ===================================================== */
 
@@ -790,6 +874,43 @@ section {
 }
 
 /* =====================================================
+   BUTTONS
+   ===================================================== */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    font-family: var(--font-mono);
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary {
+    background: var(--color-primary);
+    color: #000000;
+    border: 2px solid var(--color-primary);
+}
+
+.btn-primary:hover {
+    background: transparent;
+    color: var(--color-primary);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15);
+}
+
+.btn-full {
+    width: 100%;
+}
+
+/* =====================================================
    FOOTER
    ===================================================== */
 
@@ -863,19 +984,6 @@ section {
         padding: 0 1.2rem;
     }
 
-    .iframe-section iframe {
-        height: 350px;
-    }
-
-    .button-group {
-        gap: 1rem;
-    }
-
-    .btn {
-        padding: 0.85rem 2rem;
-        font-size: 0.9rem;
-    }
-
     .achievement-card,
     .skill-card,
     .contact-form {
@@ -890,10 +998,6 @@ section {
 
     .welcome-title {
         font-size: 2.5rem;
-    }
-
-    .welcome-subtitle {
-        font-size: 0.9rem;
     }
 
     .quote {
