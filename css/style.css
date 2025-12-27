@@ -1,6 +1,4 @@
-/* =====================================================
-   PITCH BLACK & WHITE THEME - Pure CSS Enhanced
-   ===================================================== */
+/* Pitch black and white */
 :root {
     --color-bg: #000000;
     --color-primary: #ffffff;
@@ -34,9 +32,7 @@ body {
     line-height: 1.8;
 }
 
-/* =====================================================
-   QUOTE OVERLAY - Enhanced Particle Disintegration (80 particles)
-   ===================================================== */
+/* Quote */
 
 .quote-overlay {
     position: fixed;
@@ -102,7 +98,7 @@ body {
     display: none;
 }
 
-/* Enhanced Particle System - 80 particles */
+/* Particle System - 80 particles */
 .particles {
     position: absolute;
     top: 0;
@@ -123,7 +119,7 @@ body {
     box-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
 }
 
-/* Particle animations - spreading in all directions (80 particles) */
+/* Particle animations - all directions  */
 .particle:nth-child(1) { left: 48%; top: 45%; animation: particle1 3s ease-out 2.5s forwards; }
 .particle:nth-child(2) { left: 52%; top: 46%; animation: particle2 3s ease-out 2.52s forwards; }
 .particle:nth-child(3) { left: 50%; top: 48%; animation: particle3 3s ease-out 2.54s forwards; }
@@ -287,9 +283,7 @@ body {
 @keyframes particle79 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(-275px, 215px); } }
 @keyframes particle80 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(215px, 275px); } }
 
-/* =====================================================
-   FLOATING PARTICLES BACKGROUND (for all sections except Welcome)
-   ===================================================== */
+/* floating particles */
 
 .floating-particles {
     position: absolute;
@@ -351,9 +345,7 @@ body {
     }
 }
 
-/* =====================================================
-   CONTAINER & SECTIONS
-   ===================================================== */
+/* container & sections */
 
 .container {
     max-width: 1200px;
@@ -366,9 +358,7 @@ section {
     position: relative;
 }
 
-/* =====================================================
-   NAVBAR - With Gradient on Click
-   ===================================================== */
+/* navigation */
 
 .navbar {
     position: fixed;
@@ -450,7 +440,7 @@ section {
     background: rgba(255, 255, 255, 0.05);
     border-color: rgba(255, 255, 255, 0.15);
 }
-/* Container for the icons */
+/* Container - icons */
 .social-links {
     display: flex;
     gap: 20px;
@@ -470,13 +460,32 @@ section {
     filter: brightness(1.2);    /* Slight glow effect */
 }
 
-/* Official Brand Colors */
+/* Colors */
 .github { color: #ffffff; }     /* White for your black theme */
 .linkedin { color: #0077b5; }   /* LinkedIn Blue */
 .twitter { color: #1DA1F2; }    /* Twitter Blue */
 .instagram { color: #E4405F; }  /* Instagram Pink/Red */
 .discord { color: #5865F2; }    /* Discord Blurple */
 .whatsapp { color: #25D366; }   /* WhatsApp Green */
+
+/* Map container */
+.map-wrapper {
+    margin-top: 1rem;
+    border: 1px solid var(--color-primary); /* Uses your white primary color */
+    border-radius: 4px;
+    overflow: hidden;
+    line-height: 0;
+}
+
+/* Grayscale effect  */
+.map-wrapper iframe {
+    filter: grayscale(1) invert(0.9); /* Makes the map dark/minimalist */
+    transition: filter 0.3s ease;
+}
+
+.map-wrapper:hover iframe {
+    filter: grayscale(0) invert(0); /* Optional: shows colors on hover */
+}
 
 /* Responsive adjustment for mobile */
 @media (max-width: 768px) {
@@ -489,9 +498,7 @@ section {
     }
 }
 
-/* =====================================================
-   WELCOME SECTION - With Pure CSS Typewriter Animation
-   ===================================================== */
+/* welcome animation - css typewriter */
 
 .welcome {
     position: relative;
@@ -533,7 +540,7 @@ section {
     justify-content: center;
 }
 
-/* Pure CSS Typewriter - Cycles through: Welcome → I am Aditya Patil → A BTech Student */
+/* typewriter */
 .typewriter-text::before {
     content: '';
     animation: typewriterCycle 18s linear infinite;
@@ -634,9 +641,7 @@ section {
     50%, 100% { opacity: 0; }
 }
 
-/* =====================================================
-   ABOUT SECTION
-   ===================================================== */
+/* About */
 
 .hero {
     padding-top: 8rem;
@@ -710,7 +715,7 @@ section {
     border-color: rgba(140, 140, 140, 0.4);
 }
 
-/* Bio Content */
+/* Content */
 .bio-content {
     flex: 1;
     text-align: left;
@@ -744,9 +749,7 @@ section {
     border-bottom-color: var(--color-primary);
 }
 
-/* =====================================================
-   EDUCATION TABLE - With Gradient on Row Click
-   ===================================================== */
+/* table*/
 
 .table-wrapper {
     margin: 4rem 0;
@@ -842,9 +845,7 @@ section {
     z-index: 1;
 }
 
-/* =====================================================
-   ACHIEVEMENTS SECTION - With Click Gradient Effect
-   ===================================================== */
+/* Achievements */
 
 .achievements {
     background: #000000;
@@ -968,9 +969,7 @@ section {
     font-size: 0.9rem;
 }
 
-/* =====================================================
-   SKILLS SECTION - With Click Gradient Effect
-   ===================================================== */
+/* skills */
 
 .skills {
     background: #000000;
@@ -1070,9 +1069,7 @@ section {
     font-size: 1.1rem;
 }
 
-/* =====================================================
-   CONTACT SECTION
-   ===================================================== */
+/* contact and map*/
 
 .contact {
     background: #000000;
@@ -1179,9 +1176,7 @@ section {
     background: rgba(255, 255, 255, 0.04);
 }
 
-/* =====================================================
-   BUTTONS
-   ===================================================== */
+/* buttons */
 
 .btn {
     display: inline-flex;
@@ -1216,9 +1211,7 @@ section {
     width: 100%;
 }
 
-/* =====================================================
-   FOOTER
-   ===================================================== */
+/*footer */
 
 .footer {
     background: rgba(0, 0, 0, 0.98);
@@ -1233,9 +1226,7 @@ section {
     font-size: 0.9rem;
 }
 
-/* =====================================================
-   RESPONSIVE DESIGN
-   ===================================================== */
+/* responsive */
 
 @media (max-width: 768px) {
     .navbar-container {
