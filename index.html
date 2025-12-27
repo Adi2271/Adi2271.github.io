@@ -5,18 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adi2271 | Digital Systems Engineer</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500&family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- QUOTE OVERLAY - Particle disintegration effect -->
+    <!-- QUOTE OVERLAY - Pure CSS animation -->
     <div class="quote-overlay">
         <div class="quote-container">
             <blockquote class="quote">A person is defined not by what they know, but by what they create with it.</blockquote>
-            <div class="quote-author">- Anonymous</div>
+            <div class="quote-author">— Anonymous</div>
+        </div>
+        <!-- Particles for disintegration effect -->
+        <div class="particles">
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
         </div>
     </div>
 
-    <!-- NAVBAR - Fixed, no underlines -->
+    <!-- NAVBAR -->
     <header class="navbar">
         <div class="navbar-container">
             <h1 class="logo">Adi2271</h1>
@@ -29,21 +52,18 @@
         </div>
     </header>
 
-    <!-- WELCOME SECTION - Full screen hero with typing animation ONLY -->
+    <!-- WELCOME SECTION - Full screen only -->
     <section id="welcome" class="welcome">
         <div class="welcome-bg"></div>
         <div class="container">
             <div class="welcome-content">
-                <h1 class="welcome-title">
-                    Welcome
-                    <span class="typing-subtitle"> | IIIT Student</span>
-                    <span class="cursor">|</span>
-                </h1>
+                <h1 class="welcome-title">Welcome</h1>
+                <p class="welcome-subtitle">IIIT Student | Digital Systems Engineer</p>
             </div>
         </div>
     </section>
 
-    <!-- ABOUT SECTION - Moved below welcome -->
+    <!-- ABOUT SECTION -->
     <section id="about" class="hero">
         <div class="container hero-content">
             <p class="hero-subtitle">
@@ -215,7 +235,7 @@
                     </div>
                     <div class="contact-method">
                         <strong>Location</strong>
-                        <p>Närnaund, Haryana, India</p>
+                        <p>Narnaund, Haryana, India</p>
                     </div>
                     <div class="contact-method">
                         <strong>Education</strong>
@@ -259,50 +279,5 @@
             <p>GitHub Pages | Always Learning | Always Building</p>
         </div>
     </footer>
-
-    <script>
-        // Typing animation for welcome subtitle
-        const subtitle = document.querySelector('.typing-subtitle');
-        const cursor = document.querySelector('.cursor');
-        const text = ['IIIT Student', 'Signal Processing', 'C Programmer', 'Verilog Designer'];
-        let i = 0, j = 0, currentText = '', typing = true;
-
-        function typeWriter() {
-            if (typing && j <= currentText.length) {
-                subtitle.textContent = '| ' + currentText.slice(0, j);
-                j++;
-                setTimeout(typeWriter, 150);
-            } else if (typing) {
-                typing = false;
-                setTimeout(erase, 2000);
-            }
-        }
-
-        function erase() {
-            if (j >= 0) {
-                subtitle.textContent = '| ' + currentText.slice(0, j);
-                j--;
-                setTimeout(erase, 100);
-            } else {
-                if (i < text.length - 1) {
-                    i++;
-                    currentText = text[i];
-                    typing = true;
-                    setTimeout(typeWriter, 500);
-                }
-            }
-        }
-
-        // Start typing animation after quote disappears
-        setTimeout(() => {
-            currentText = text[0];
-            typeWriter();
-        }, 4500);
-
-        // Cursor blink
-        setInterval(() => {
-            cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
-        }, 500);
-    </script>
 </body>
 </html>
