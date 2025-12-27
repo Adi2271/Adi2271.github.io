@@ -610,14 +610,16 @@ section {
 }
 
 .hero-subtitle {
-    font-size: 1.4rem;
+    font-size: 0.9rem;
     color: var(--color-primary);
     max-width: 700px;
     margin: 0 auto 1rem;
     line-height: 1.8;
     font-weight: 500;
     font-family: var(--font-mono);
-    letter-spacing: 0.5px;
+    letter-spacing: 2.0px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
 }
 
 .hero-subtitle-secondary {
@@ -633,7 +635,9 @@ section {
 .hero-layout {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 4rem;
+    margin-top: 2rem;
     max-width: 1000px;
     margin: 3rem auto;
     text-align: left;
@@ -648,10 +652,10 @@ section {
     width: 250px;
     height: 250px;
     border-radius: 50%;
+    object-fit: cover;
     border: 2px solid rgba(140, 140, 140, 0.25);
     box-shadow:
-        0 0 12px rgba(140, 140, 140, 0.15),
-        0 0 25px rgba(140, 140, 140, 0.08);
+        0 0 20px rgba(255, 255, 255, 0.2);
     animation: gentleFloat 4s ease-in-out infinite;
     transition: all 0.4s ease;
 }
@@ -671,6 +675,7 @@ section {
 /* Bio Content */
 .bio-content {
     flex: 1;
+    text-align: left;
 }
 
 .bio-content h2 {
@@ -707,8 +712,8 @@ section {
 
 .table-wrapper {
     margin: 4rem 0;
-    background: #000000;
-    padding: 3rem 0;
+    background: #050505;
+    padding: 5rem 0;
     position: relative;
 }
 
@@ -726,6 +731,8 @@ section {
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 12px;
+    margin-top: 2rem;
+    font-family: var(--font-mono);
     overflow: hidden;
     position: relative;
     z-index: 1;
@@ -740,17 +747,20 @@ section {
     text-align: left;
     color: var(--color-primary);
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-family: var(--font-mono);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid #222;
+    background: #111;
 }
 
 .education-table td {
     padding: 1.2rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    border-bottom: 1px solid #222;
     color: var(--color-text);
+    text-align: left;
+    font-size: 0.95rem;
 }
 
 .education-table tbody tr {
@@ -1207,13 +1217,19 @@ section {
         font-size: 0.85rem;
     }
 
+    .hero-layout {
+        flex-direction: column; /* Stack vertically on mobile */
+        text-align: center;
+        gap: 2rem;
+    }
+
     .welcome-bg {
         background: url('../images/bg-mobile.jpg') center/cover no-repeat;
     }
 
     .hero-image img {
-        width: 160px;
-        height: 160px;
+        width: 180px;
+        height: 180px;
     }
 
     .contact-grid {
@@ -1236,6 +1252,8 @@ section {
 
     .education-table {
         min-width: 600px;
+        display: block;
+        overflow-x: auto;
     }
 
     .container {
@@ -1247,6 +1265,10 @@ section {
     .contact-form {
         padding: 2rem 1.5rem;
     }
+    .bio-content {
+        text-align: center;
+    }
+
 }
 
 @media (max-width: 480px) {
