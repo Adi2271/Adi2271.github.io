@@ -288,6 +288,70 @@ body {
 @keyframes particle80 { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(215px, 275px); } }
 
 /* =====================================================
+   FLOATING PARTICLES BACKGROUND (for all sections except Welcome)
+   ===================================================== */
+
+.floating-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.float-particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    opacity: 0;
+    animation: floatDown 15s linear infinite;
+}
+
+/* Different starting positions and delays for each particle */
+.float-particle:nth-child(1) { left: 5%; animation-delay: 0s; animation-duration: 12s; }
+.float-particle:nth-child(2) { left: 15%; animation-delay: 2s; animation-duration: 14s; }
+.float-particle:nth-child(3) { left: 25%; animation-delay: 4s; animation-duration: 16s; }
+.float-particle:nth-child(4) { left: 35%; animation-delay: 1s; animation-duration: 13s; }
+.float-particle:nth-child(5) { left: 45%; animation-delay: 3s; animation-duration: 15s; }
+.float-particle:nth-child(6) { left: 55%; animation-delay: 5s; animation-duration: 17s; }
+.float-particle:nth-child(7) { left: 65%; animation-delay: 0.5s; animation-duration: 12.5s; }
+.float-particle:nth-child(8) { left: 75%; animation-delay: 2.5s; animation-duration: 14.5s; }
+.float-particle:nth-child(9) { left: 85%; animation-delay: 4.5s; animation-duration: 16.5s; }
+.float-particle:nth-child(10) { left: 95%; animation-delay: 1.5s; animation-duration: 13.5s; }
+.float-particle:nth-child(11) { left: 10%; animation-delay: 3.5s; animation-duration: 15.5s; }
+.float-particle:nth-child(12) { left: 20%; animation-delay: 5.5s; animation-duration: 17.5s; }
+.float-particle:nth-child(13) { left: 30%; animation-delay: 0.8s; animation-duration: 12.8s; }
+.float-particle:nth-child(14) { left: 40%; animation-delay: 2.8s; animation-duration: 14.8s; }
+.float-particle:nth-child(15) { left: 50%; animation-delay: 4.8s; animation-duration: 16.8s; }
+.float-particle:nth-child(16) { left: 60%; animation-delay: 1.8s; animation-duration: 13.8s; }
+.float-particle:nth-child(17) { left: 70%; animation-delay: 3.8s; animation-duration: 15.8s; }
+.float-particle:nth-child(18) { left: 80%; animation-delay: 5.8s; animation-duration: 17.8s; }
+.float-particle:nth-child(19) { left: 90%; animation-delay: 2.2s; animation-duration: 14.2s; }
+.float-particle:nth-child(20) { left: 12%; animation-delay: 4.2s; animation-duration: 16.2s; }
+
+@keyframes floatDown {
+    0% {
+        transform: translateY(-10px) translateX(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.6;
+    }
+    90% {
+        opacity: 0.4;
+    }
+    100% {
+        transform: translateY(100vh) translateX(50px);
+        opacity: 0;
+    }
+}
+
+/* =====================================================
    CONTAINER & SECTIONS
    ===================================================== */
 
@@ -299,6 +363,7 @@ body {
 
 section {
     padding: 5rem 0;
+    position: relative;
 }
 
 /* =====================================================
@@ -430,10 +495,10 @@ section {
     justify-content: center;
 }
 
-/* Pure CSS Typewriter - Cycles through: Welcome → Aditya Patil → BTech Student */
+/* Pure CSS Typewriter - Cycles through: Welcome → I am Aditya Patil → A BTech Student */
 .typewriter-text::before {
     content: '';
-    animation: typewriterCycle 12s linear infinite;
+    animation: typewriterCycle 18s linear infinite;
 }
 
 .typewriter-text::after {
@@ -443,16 +508,16 @@ section {
 }
 
 @keyframes typewriterCycle {
-    /* Welcome - 0-4s */
-    0%, 2.78% { content: 'W'; }
-    2.78%, 5.56% { content: 'We'; }
-    5.56%, 8.33% { content: 'Wel'; }
-    8.33%, 11.11% { content: 'Welc'; }
-    11.11%, 13.89% { content: 'Welco'; }
-    13.89%, 16.67% { content: 'Welcom'; }
-    16.67%, 27.78% { content: 'Welcome'; }
+    /* Welcome - 0-33.33% (6s total) */
+    0%, 1.85% { content: 'W'; }
+    1.85%, 3.70% { content: 'We'; }
+    3.70%, 5.56% { content: 'Wel'; }
+    5.56%, 7.41% { content: 'Welc'; }
+    7.41%, 9.26% { content: 'Welco'; }
+    9.26%, 11.11% { content: 'Welcom'; }
+    11.11%, 27.78% { content: 'Welcome'; }
     
-    /* Delete Welcome - 27.78-33.33s */
+    /* Delete Welcome - 27.78-33.33% */
     27.78%, 28.70% { content: 'Welcom'; }
     28.70%, 29.63% { content: 'Welco'; }
     29.63%, 30.56% { content: 'Welc'; }
@@ -460,63 +525,70 @@ section {
     31.48%, 32.41% { content: 'We'; }
     32.41%, 33.33% { content: 'W'; }
     
-    /* Aditya Patil - 33.33-66.67s */
+    /* I am Aditya Patil - 33.33-66.67% (6s total) */
     33.33%, 34.26% { content: ''; }
-    34.26%, 35.19% { content: 'A'; }
-    35.19%, 36.11% { content: 'Ad'; }
-    36.11%, 37.04% { content: 'Adi'; }
-    37.04%, 37.96% { content: 'Adit'; }
-    37.96%, 38.89% { content: 'Adity'; }
-    38.89%, 39.81% { content: 'Aditya'; }
-    39.81%, 40.74% { content: 'Aditya '; }
-    40.74%, 41.67% { content: 'Aditya P'; }
-    41.67%, 42.59% { content: 'Aditya Pa'; }
-    42.59%, 43.52% { content: 'Aditya Pat'; }
-    43.52%, 44.44% { content: 'Aditya Pati'; }
-    44.44%, 61.11% { content: 'Aditya Patil'; }
+    34.26%, 35.19% { content: 'I'; }
+    35.19%, 36.11% { content: 'I '; }
+    36.11%, 37.04% { content: 'I a'; }
+    37.04%, 37.96% { content: 'I am'; }
+    37.96%, 38.89% { content: 'I am '; }
+    38.89%, 39.81% { content: 'I am A'; }
+    39.81%, 40.74% { content: 'I am Ad'; }
+    40.74%, 41.67% { content: 'I am Adi'; }
+    41.67%, 42.59% { content: 'I am Adit'; }
+    42.59%, 43.52% { content: 'I am Adity'; }
+    43.52%, 44.44% { content: 'I am Aditya'; }
+    44.44%, 45.37% { content: 'I am Aditya '; }
+    45.37%, 46.30% { content: 'I am Aditya P'; }
+    46.30%, 47.22% { content: 'I am Aditya Pa'; }
+    47.22%, 48.15% { content: 'I am Aditya Pat'; }
+    48.15%, 49.07% { content: 'I am Aditya Pati'; }
+    49.07%, 61.11% { content: 'I am Aditya Patil'; }
     
-    /* Delete Aditya Patil - 61.11-66.67s */
-    61.11%, 61.57% { content: 'Aditya Pati'; }
-    61.57%, 62.04% { content: 'Aditya Pat'; }
-    62.04%, 62.50% { content: 'Aditya Pa'; }
-    62.50%, 62.96% { content: 'Aditya P'; }
-    62.96%, 63.43% { content: 'Aditya '; }
-    63.43%, 63.89% { content: 'Aditya'; }
-    63.89%, 64.35% { content: 'Adity'; }
-    64.35%, 64.81% { content: 'Adit'; }
-    64.81%, 65.28% { content: 'Adi'; }
-    65.28%, 65.74% { content: 'Ad'; }
-    65.74%, 66.20% { content: 'A'; }
-    66.20%, 66.67% { content: ''; }
+    /* Delete I am Aditya Patil - 61.11-66.67% */
+    61.11%, 61.57% { content: 'I am Aditya Pati'; }
+    61.57%, 62.04% { content: 'I am Aditya Pat'; }
+    62.04%, 62.50% { content: 'I am Aditya Pa'; }
+    62.50%, 62.96% { content: 'I am Aditya P'; }
+    62.96%, 63.43% { content: 'I am Aditya '; }
+    63.43%, 63.89% { content: 'I am Aditya'; }
+    63.89%, 64.35% { content: 'I am Adity'; }
+    64.35%, 64.81% { content: 'I am Adit'; }
+    64.81%, 65.28% { content: 'I am Adi'; }
+    65.28%, 65.74% { content: 'I am Ad'; }
+    65.74%, 66.20% { content: 'I am A'; }
+    66.20%, 66.67% { content: 'I am '; }
     
-    /* BTech Student - 66.67-100s */
-    66.67%, 67.59% { content: 'B'; }
-    67.59%, 68.52% { content: 'BT'; }
-    68.52%, 69.44% { content: 'BTe'; }
-    69.44%, 70.37% { content: 'BTec'; }
-    70.37%, 71.30% { content: 'BTech'; }
-    71.30%, 72.22% { content: 'BTech '; }
-    72.22%, 73.15% { content: 'BTech S'; }
-    73.15%, 74.07% { content: 'BTech St'; }
-    74.07%, 75.00% { content: 'BTech Stu'; }
-    75.00%, 75.93% { content: 'BTech Stud'; }
-    75.93%, 76.85% { content: 'BTech Stude'; }
-    76.85%, 77.78% { content: 'BTech Studen'; }
-    77.78%, 94.44% { content: 'BTech Student'; }
+    /* A BTech Student - 66.67-100% (6s total) */
+    66.67%, 67.59% { content: 'A'; }
+    67.59%, 68.52% { content: 'A '; }
+    68.52%, 69.44% { content: 'A B'; }
+    69.44%, 70.37% { content: 'A BT'; }
+    70.37%, 71.30% { content: 'A BTe'; }
+    71.30%, 72.22% { content: 'A BTec'; }
+    72.22%, 73.15% { content: 'A BTech'; }
+    73.15%, 74.07% { content: 'A BTech '; }
+    74.07%, 75.00% { content: 'A BTech S'; }
+    75.00%, 75.93% { content: 'A BTech St'; }
+    75.93%, 76.85% { content: 'A BTech Stu'; }
+    76.85%, 77.78% { content: 'A BTech Stud'; }
+    77.78%, 78.70% { content: 'A BTech Stude'; }
+    78.70%, 79.63% { content: 'A BTech Studen'; }
+    79.63%, 94.44% { content: 'A BTech Student'; }
     
-    /* Delete BTech Student - 94.44-100s */
-    94.44%, 94.91% { content: 'BTech Studen'; }
-    94.91%, 95.37% { content: 'BTech Stude'; }
-    95.37%, 95.83% { content: 'BTech Stud'; }
-    95.83%, 96.30% { content: 'BTech Stu'; }
-    96.30%, 96.76% { content: 'BTech St'; }
-    96.76%, 97.22% { content: 'BTech S'; }
-    97.22%, 97.69% { content: 'BTech '; }
-    97.69%, 98.15% { content: 'BTech'; }
-    98.15%, 98.61% { content: 'BTec'; }
-    98.61%, 99.07% { content: 'BTe'; }
-    99.07%, 99.54% { content: 'BT'; }
-    99.54%, 100% { content: 'B'; }
+    /* Delete A BTech Student - 94.44-100% */
+    94.44%, 94.91% { content: 'A BTech Studen'; }
+    94.91%, 95.37% { content: 'A BTech Stude'; }
+    95.37%, 95.83% { content: 'A BTech Stud'; }
+    95.83%, 96.30% { content: 'A BTech Stu'; }
+    96.30%, 96.76% { content: 'A BTech St'; }
+    96.76%, 97.22% { content: 'A BTech S'; }
+    97.22%, 97.69% { content: 'A BTech '; }
+    97.69%, 98.15% { content: 'A BTech'; }
+    98.15%, 98.61% { content: 'A BTec'; }
+    98.61%, 99.07% { content: 'A BTe'; }
+    99.07%, 99.54% { content: 'A BT'; }
+    99.54%, 100% { content: 'A B'; }
 }
 
 @keyframes blink {
@@ -557,17 +629,29 @@ section {
     font-weight: 400;
 }
 
+/* Hero Layout - Image left, Text right */
+.hero-layout {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    max-width: 1000px;
+    margin: 3rem auto;
+    text-align: left;
+}
+
 /* Profile Image */
+.hero-image {
+    flex-shrink: 0;
+}
+
 .hero-image img {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     border: 2px solid rgba(140, 140, 140, 0.25);
     box-shadow:
         0 0 12px rgba(140, 140, 140, 0.15),
         0 0 25px rgba(140, 140, 140, 0.08);
-    margin: 3rem auto;
-    display: block;
     animation: gentleFloat 4s ease-in-out infinite;
     transition: all 0.4s ease;
 }
@@ -586,8 +670,7 @@ section {
 
 /* Bio Content */
 .bio-content {
-    max-width: 800px;
-    margin: 3rem auto;
+    flex: 1;
 }
 
 .bio-content h2 {
@@ -626,6 +709,7 @@ section {
     margin: 4rem 0;
     background: #000000;
     padding: 3rem 0;
+    position: relative;
 }
 
 .table-wrapper h2 {
@@ -643,6 +727,8 @@ section {
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 12px;
     overflow: hidden;
+    position: relative;
+    z-index: 1;
 }
 
 .education-table thead {
@@ -730,6 +816,8 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
+    position: relative;
+    z-index: 1;
 }
 
 .achievement-card {
@@ -743,7 +831,7 @@ section {
     overflow: hidden;
 }
 
-/* Gradient sweep effect on click */
+/* Gradient sweep effect on hover and active */
 .achievement-card::before {
     content: '';
     position: absolute;
@@ -763,6 +851,7 @@ section {
     z-index: 0;
 }
 
+.achievement-card:hover::before,
 .achievement-card:active::before {
     left: 100%;
 }
@@ -852,6 +941,8 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
+    position: relative;
+    z-index: 1;
 }
 
 .skill-card {
@@ -865,7 +956,7 @@ section {
     overflow: hidden;
 }
 
-/* Gradient sweep effect on click */
+/* Gradient sweep effect on hover and active */
 .skill-card::before {
     content: '';
     position: absolute;
@@ -885,6 +976,7 @@ section {
     z-index: 0;
 }
 
+.skill-card:hover::before,
 .skill-card:active::before {
     left: 100%;
 }
@@ -951,6 +1043,8 @@ section {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
+    position: relative;
+    z-index: 1;
 }
 
 .contact-info h3 {
